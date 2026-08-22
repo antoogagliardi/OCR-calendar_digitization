@@ -1,0 +1,25 @@
+project:
+  name: ocr
+  seed: 10
+  device: mps                                           # cpu, cuda, mps
+
+paths:
+  data: data/days/
+  data_split: data_split
+
+training:
+  reload_dict: True
+  reload_data: True
+  ckpt_path: ckpt
+  wandb_proj: OCR_calendar111
+  wandb_run: DAY_DIGITALIZER_RESNET6
+  
+  epochs: 3
+  resume: True
+  wandb_runID: yblif6gk                                 # LAST_RUN_ID is discovered once the project is created
+  last_epoch: 3                                         # Epoch to resume the training
+  add_epoch: 3                                          # Additional training epochs
+  
+  batch_size: 4
+  grad_accumulation: 4                                 # 1 to avoid gradient accomulation
+  learning_rate: 0.0001

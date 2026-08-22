@@ -1,0 +1,25 @@
+project:
+  name: ocr
+  seed: 10
+  device: mps                                           # cpu, cuda, mps
+
+paths:
+  data: data/IAM_handwriting/
+  data_type: words                                      
+  data_split: data_split
+
+training:
+  reload_data: True
+  ckpt_path: ckpt
+  wandb_proj: OCR_calendar111
+  wandb_run: OCR_TRANSFORMER_SENTENCES
+  
+  epochs: 1
+  resume: True
+  wandb_runID: 4ed4q60l                                 # LAST_RUN_ID is discovered once the project is created
+  last_epoch: 1                                         # Epoch to resume the training
+  add_epoch: 5                                         # Additional training epochs
+  
+  batch_size: 8
+  grad_accumulation: 8                                  # 1 to avoid gradient accomulation
+  learning_rate: 0.0001

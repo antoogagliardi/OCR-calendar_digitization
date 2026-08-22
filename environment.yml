@@ -1,0 +1,30 @@
+# conda env create -f environment.yml 
+name: ocr
+channels:
+  - defaults
+  - conda-forge
+
+dependencies:
+  - python=3.12
+  - pip
+  - pip:                    # pip packages inside conda env
+    - matplotlib
+    - numpy==1.26.4
+    - pandas
+    - pillow                # Pillow (PIL)
+    - tqdm
+    - wandb                 # Weights & Biases
+    - torch
+    - lightning
+    # - torchvision
+    - torchmetrics
+    - scikit-learn          # SkLearn ML
+    - scikit-image          # Image Processing
+    - scipy
+    - imutils               # 
+    - imgaug
+    - opencv-python         # OpenCV (cv2)
+    - accelerate            # Huggingface: Accelerate library
+    - transformers          # Huggingface: Transformers
+    - tokenizers            # Huggingface: Tokenizers
+    - nltk                  # NLTK

@@ -1,0 +1,24 @@
+project:
+  name: ocr
+  seed: 10
+  device: mps                                           # cpu, cuda, mps
+
+paths:
+  data: data/calendars
+  data_split: data_split
+
+training:
+  reload_data: True
+  ckpt_path: ckpt
+  wandb_proj: OCR_calendar111
+  wandb_run: CALENDAR_PARSER
+  
+  epochs: 2
+  resume: True
+  wandb_runID: ry22gphh                                 # LAST_RUN_ID is discovered once the project is created
+  last_epoch: 4                                         # Epoch to resume the training
+  add_epoch: 21                                          # Additional training epochs
+  
+  batch_size: 4
+  grad_accumulation: 1                                  # 1 to avoid gradient accomulation
+  learning_rate: 0.0001
